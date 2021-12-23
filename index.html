@@ -230,34 +230,37 @@ body {
 </style>
 </head>
 <body>
-<audio controls loop autoplay>
+<audio preload controls loop autoplay id="vd">
   <source src="we.wish.you.2.mp3" type="audio/mpeg">
 </audio>
 
 <div id="tree">
 	<div class="star"></div>
 </div>
-<div class="title">圣 诞 快 乐</div>
+<div class="title">朗 朗 圣 诞 快 乐</div>
 
 <div class="poem">
- <p>We wish you a Merry Christmas;
- <p>We wish you a Merry Christmas;
- <p>We wish you a Merry Christmas 
- <p>And a Happy New Year.
- <p>Good tidings we bring to you and your kin;
- <p>Good tidings for Christmas and 
- <p>A Happy New Year.	
+ <b><p> 爱你 ！ ！ ！</b>
 </div>
 <div class="footer christmas">
  
- <p> Hao Chen @ <script>document.write(new Date().getFullYear())</script>
+ <p> He Zhang @ <script>document.write(new Date().getFullYear())</script>
 </div>
 
 </body>
 </html>
 
 <script type="text/javascript">
-
+  window.onload = function(){
+    setInterval("toggleSound()",100);
+  }
+  function toggleSound() {
+    var music = document.getElementById("vd");//获取ID  
+      if (music.paused) { //判读是否播放  
+        music.paused=false;
+        music.play(); //没有就播放 
+    }      
+  }
 	var greeting = [
 		'printf("{0}");',
 		'cout << "{0}" << endl;',
@@ -277,7 +280,7 @@ body {
 	];
 
         var year = new Date().getFullYear()+1;
-	var str = ["Merry Christmas!", "Happy New Year!", "Hello "+year+"!"];
+	var str = ["Merry Christmas!"];
 
 	if (!String.prototype.format) {
 	  String.prototype.format = function() {
