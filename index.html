@@ -2214,14 +2214,15 @@ new la({color:void 0!==b?b:16777215}))};k.WrapAroundEnding=2402;k.XHRLoader=func
         const overlay = document.getElementById("overlay");
         overlay.remove();
         const labels = document.getElementById("labels");
-        for (let i = 0; i < my_labels.length; i++) {
-          setTimeout(() => {
-            labels.className = "hide";
-            labels.innerHTML = my_labels[i];
-            labels.className = "show";
-          }, 2000 * i);
-        }
-
+        // for (let i = 0; i < my_labels.length; i++) {
+        //   setTimeout(() => {
+        //     labels.className = "hide";
+        //     labels.innerHTML = my_labels[i];
+        //     labels.className = "show";
+        //   }, 2000 * i);
+        // }
+        labels.innerHTML = my_labels;
+        labels.className = "show";
         scene = new THREE.Scene();
         renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setPixelRatio(window.devicePixelRatio);
